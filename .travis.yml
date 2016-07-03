@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: mR8ZT8xdA3hxzGPZDXvoF4xJxSa2MD3+t2gtCdAr3cPfim4PQgimu7w73xJWzpG5/EQbEbivrp8XLSoB5TGxm54SahnE9zeOknYfPhm2dSAOBZa/ecjvrVK3fh5uXr3Y4t6Z+c/HCseF0LVxcVp5iWNzML3E1rmCqtNbrQpjmM9RHeNNNH1imfq3oVfvf3FiyOSgVOXV4dXV26F72wjHnBa3/JLm1osZwX/b4xdKujDXzw4vqt5Qr0S4ImETfVvL/k0EHN2AIrKIH/j6sFsnpi8cpQjgJj4FHtKjOJXourrt0TrDTsDFQjfiRlRf7xuTlyjMKRMq4okpa4cWwJor8OIAMWcKgUY5jfaBMITLtn/On8D3fi3qDJ60kH7LeyyJ7s20W49SIQ8hkit15eZMJAxMRTkWop3HPSWaB7d5QEcGaG4e+ok5NZMoPOk/tpi6BOHLM/vUj/ydbnMcEeUAG5zQjP7tV/h+gJ9gczRA8FxV/MLY82ZxeJFf3mp6l/4sGKMZHaaiQCBECam5eGjqq4WtHsYUIAorvPkkY048wxlFu+9J3mEpKS8Evu5e2vRaIuqb1Z8IexkeA+HtUV/blA5M1WvHGLX5ee8+mbS9Rzzzz158NErnEn+cPCkCHv984F4n/Z2kv3k5NgLym8xKmFly/EjC/WwRMGLSjD4NB/0=
+  app: enigmatic-chamber-94321
+  on:
+    repo: feipinghuang/peepchat-ui
