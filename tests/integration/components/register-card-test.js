@@ -13,13 +13,4 @@ test('it renders', function(assert) {
 
   assert.equal(this.$().text().trim().replace(/[\s\n]+/g, ''),
     'RegisterwithPeepchatUsernamePasswordConfirmPassword');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#register-card}}
-      template block text
-    {{/register-card}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });
