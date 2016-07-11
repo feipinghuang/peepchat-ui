@@ -20,7 +20,6 @@ export default Ember.Route.extend({
           // Unauthorized
           this.get('flashMessages')
             .danger('There was a problem with your username or password, please try again');
-          console.log(this.get('flashMessages.arrangedQueue'));
         } else {
 
           // All other API errors
